@@ -1,0 +1,261 @@
+:root{
+
+    --negro-claro: #2B2A2A;
+    --negro-oscuro: #1A1919;
+    --lg-font: 24px;
+    --md-font: 20px;
+    --sm-font: 16px;
+}
+
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Estilos header */
+
+header{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    margin: 50px 0;
+}
+
+.icono{
+
+    width: 80px;
+    height: 80px;
+}
+
+#titulo{
+    font-size: var(--lg-font);
+    text-align: center;
+}
+
+
+/* Estilos body */
+body{
+    position: relative;
+    box-sizing: border-box;
+    display: grid;
+    background-color: var(--principal-background);
+    color: var(--white);
+    
+}
+
+
+/* Estilos compartidos */
+.contenedor, .tarjeton, .opciones_cont{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+}
+
+
+/* Estilos tarjetas */
+.contenedor{
+    grid-template: repeat(9, 1fr) / repeat(2, 1fr);
+    max-width: 1000px;
+    gap: 10px;
+    margin: 0 auto;
+
+}
+
+.tarjeton{
+    height: 100%;
+    width: 100%;
+    max-width: 370px;
+    grid-template-rows: 80px 200px 170px 50px;
+    border: 1px solid var(--negro-claro);
+    border-radius: 4px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nombre_partido{
+    text-align: center;
+    padding: 10px;
+    font-size: var(--sm-font);
+}
+
+.logo-img{
+    
+    width: 180px;
+    
+}
+
+.logo-img:hover{
+
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.opciones_cont{
+
+    grid-template: repeat(5, auto) / repeat(5, auto);
+    width: 90%;
+    gap: 4px;
+}
+
+.num_opcion{
+    border: 1px solid var(--negro-claro);
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.num_opcion:hover{
+
+    transform: scale(1.1);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Estilos celebracion */
+.inactivo{
+    display: none;
+}
+
+#filtro_tarjeta{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.cerrar_icono{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+.tarjeta_celebracion{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 500px;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.foto{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #4285F4;
+    object-fit: cover;
+}
+
+.celebracion_img{
+    width: 250px;
+}
+
+.texto_tarjeta{
+    font-size: var(--md-font);
+}
+
+/* Tarjeta seleccion incorrecta */
+
+.img_incorrecta{
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+}
+
+.tarjeta_incorrecta{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 500px;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+#filtro_tarjeta_incorrecta{
+    position: fixed;
+    padding: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.texto_tarjeta_incorrecta{
+    font-size: var(--lg-font);
+}
+
+
+/* Pop up */
+
+.cont_popup {
+    display: none;
+    position: fixed;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    border-radius: 4px;
+}
+
+.icon_popup{
+    width: 80px;
+    height: 80px;
+    grid-area: 1/1/2/2;
+}
+
+.text_popup{
+    grid-area: 1/2/2/4;
+
+}
+
+@media (min-width: 1000px) {
+
+    .tarjeton{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px auto 60px;
+        max-height: 300px;
+        max-width: 480px;
+    }
+    .nombre_partido{
+        grid-area: 1/1/2/2;
+    }
+
+    .logo-img{
+    
+        height: fit-content;
+    }
+
+    .opciones_cont{
+
+        grid-area: 1/2/4/3;
+    }
+
+    .tipo-partido{
+        grid-area: 3/1/4/2;
+    }
+}
