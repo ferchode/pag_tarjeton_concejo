@@ -92,7 +92,7 @@ tarjetones.push(
 
         'nombre_partido': 'MEDELLÍN NOS UNE',
         'tipo': 'NO PREFERENTE',
-        'logo': '',
+        'logo': 'imgs/logos-partidos/med-nos-une-log.png',
         'id': 'I',
         'opciones': 0
     }
